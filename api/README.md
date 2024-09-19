@@ -54,6 +54,8 @@ Este endpoint autentica um usuário com nome de usuário, senha e código TOTP.
 - **Password:** A senha do usuário (neste caso, `password123`).
 - **TOTP Code:** O código TOTP de 6 dígitos gerado por um autenticador TOTP (como o Google Authenticator).
 
+_Nota:_ você pode gerar um código TOTP neste site https://totp.danhersam.com/.
+
 #### Respostas:
 
 - **200 OK:** Se o login for bem-sucedido e o código TOTP for válido.
