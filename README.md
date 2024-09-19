@@ -25,6 +25,8 @@ o gerenciamento de estado e a integração com a API.
 
 ### Páginas a Implementar
 
+Figma: [Autenticação TOTP](https://www.figma.com/design/GcvlFrYngcezQUY78XGEmG/Flutter-Test?node-id=0-1&t=KC4t2EvVMdYyYzUW-1)
+
 1. **Login Page**:
    - Inputs para nome de usuário e senha.
    - Botão de login.
