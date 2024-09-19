@@ -12,7 +12,6 @@ dependencies:
     sdk: flutter
   cupertino_icons: ^1.0.6
   otp: ^3.1.4
-  dio: ^5.7.0
 
 dev_dependencies:
   flutter_test:
