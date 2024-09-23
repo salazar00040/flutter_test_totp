@@ -1,25 +1,24 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_bloc/flutter_bloc.dart';
+import 'package:flutter_dev_test/pages/home_page.dart';
+import 'package:flutter_dev_test/pages/login_page.dart';
+import 'package:flutter_dev_test/pages/recovery_secret_page.dart';
+
+import 'bloc/auth_bloc.dart';
 
 void main() {
-  runApp(const MyApp());
-}
-
-class MyApp extends StatelessWidget {
-  const MyApp({super.key});
-
-  @override
-  Widget build(BuildContext context) {
-    return MaterialApp(
-      title: 'Dev Flutter Test',
-      theme: ThemeData(
-        colorScheme: ColorScheme.fromSeed(seedColor: Colors.deepPurple),
-        useMaterial3: true,
+  runApp(
+    BlocProvider(
+      create: (context) => AuthBloc(),
+      child: MaterialApp(
+        debugShowCheckedModeBanner: false,
+        initialRoute: '/',
+        routes: {
+          '/': (context) => LoginPage(),
+          '/recovery': (context) => RecoverySecretPage(),
+          '/home': (context) => HomePage(),
+        },
       ),
-      home: const Scaffold(
-        body: Center(
-          child: Text('good luck =]'),
-        ),
-      ),
-    );
-  }
+    ),
+  );
 }

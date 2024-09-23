@@ -1,11 +1,13 @@
 import pyotp
 import logging
 from flask import Flask, request, jsonify
+from flask_cors import CORS
 
 # Configure logging
 logging.basicConfig(level=logging.INFO, format='%(asctime)s - %(levelname)s - %(message)s')
 
 app = Flask(__name__)
+CORS(app)  # Permitir requisições de outros domínios (necessário para desenvolvimento)
 
 # Dummy credentials for example
 USER_CREDENTIALS = {
@@ -95,7 +97,6 @@ def get_seed():
         }
         return jsonify(response), 404  # User not found
 
-
 if __name__ == '__main__':
     logging.info("Starting Flask server...")
-    app.run(debug=True)
+    app.run(host='0.0.0.0', port=5000, debug=True)
